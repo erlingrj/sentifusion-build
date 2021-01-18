@@ -20,14 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gcovr lcov
 
 # Download and install boost v1.73.0
-RUN cd /home && wget http://downloads.sourceforge.net/project/boost/boost/1.73.0/boost_1_73_0.tar.gz \
-  && tar xfz boost_1_73_0.tar.gz \
-  && rm boost_1_73_0.tar.gz \
-  && cd boost_1_73_0 \
-  && ./bootstrap.sh --prefix=/usr/local --with-libraries=program_options \
-  && ./b2 install \
-  && cd /home \
-  && rm -rf boost_1_73_0/
+RUN apt-get install libboost-all-dev -y --no-install-recommends
 
 
 
