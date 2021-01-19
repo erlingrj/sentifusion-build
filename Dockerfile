@@ -22,19 +22,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Download and install boost v1.73.0
 RUN apt-get install libboost-all-dev -y --no-install-recommends
 
-
-
-
 # Install cpplint
 RUN pip3 install cpplint
 
 # Install newest version of protobuf
-RUN git clone https://github.com/protocolbuffers/protobuf.git /var/local/git/proto && \
-    cd /var/local/git/proto && \
+RUN git clone https://github.com/protocolbuffers/protobuf.git /usr/local/proto && \
+    cd /usr/local/proto && \
     git submodule update --init --recursive && \
     ./autogen.sh && \
     ./configure && \
-   make -j$(nproc) && make -j$(nproc) check && make install & ldconfig
+   make  && make check && make install && ldconfig
 
 
 
