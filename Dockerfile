@@ -31,7 +31,7 @@ RUN git clone https://github.com/protocolbuffers/protobuf.git /usr/local/proto &
     git submodule update --init --recursive && \
     ./autogen.sh && \
     ./configure && \
-   make  && make check && make install && ldconfig
+   make && make install && ldconfig
 
 
 
