@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip \
     python3-pip \
     gcovr lcov \
-    ssh
+    ssh-client
 
 # Download and install boost v1.73.0
 RUN apt-get install libboost-all-dev -y --no-install-recommends
