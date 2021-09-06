@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     autoconf \
     git \
-    gcc \
+    gcc-8 \
     wget \
     pkg-config \
     automake \
